@@ -55,8 +55,7 @@ Security controls & compliance
 
 📂 Cybersecurity Projects
 1. Internal Security Audit – Botium Toys
-
-Folder: /Botium-Toys-Security-Audit
+   
 This project includes:
 
 Scope & goals of the audit
@@ -67,11 +66,10 @@ Controls & compliance checklist
 
 Recommendations to leadership
 
-🔗 View Project
+[🔗 View Project](./02-botium-toys-internal-audit/botium-audit-summary.md)
 
 
 2. Controls & Compliance Checklist
-
 
 Covers:
 
@@ -115,6 +113,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
