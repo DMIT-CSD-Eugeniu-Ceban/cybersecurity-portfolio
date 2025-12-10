@@ -52,6 +52,7 @@ Risk, threats, vulnerabilities
 
 Security controls & compliance
 
+
 📂 Cybersecurity Projects
 1. Internal Security Audit – Botium Toys
 
@@ -68,9 +69,10 @@ Recommendations to leadership
 
 🔗 View Project
 
+
 2. Controls & Compliance Checklist
 
-Folder: /Controls-Compliance-Checklist
+Folder: (/02-botium-toys-internal-audit/botium-controls-checklist.md)
 Covers:
 
 Administrative, technical, and physical controls
@@ -83,12 +85,14 @@ Security recommendations
 
 🔗 View Project
 
+
 3. Professional Statement
 
 Folder: /Professional-Statement
 A short summary that highlights my strengths, values, and interest in cybersecurity.
 
 🔗 View Statement
+
 
 📜 Certifications
 
@@ -97,6 +101,7 @@ Google Cybersecurity Certificate (In Progress)
 CompTia Network+
 
 CompTia Security+
+w
 
 📬 Contact
 
@@ -110,3 +115,4 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
