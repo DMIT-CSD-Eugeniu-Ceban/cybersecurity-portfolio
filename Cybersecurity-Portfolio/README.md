@@ -103,7 +103,7 @@ w
 
 📬 Contact
 
-LinkedIn: (add your link here)
+LinkedIn: https://www.linkedin.com/in/eugeniu-ceban
 
 GitHub: https://github.com/DMIT-CSD-Eugeniu-Ceban
 
@@ -113,6 +113,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
