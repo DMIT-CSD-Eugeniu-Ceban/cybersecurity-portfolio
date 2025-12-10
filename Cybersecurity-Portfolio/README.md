@@ -72,7 +72,7 @@ Recommendations to leadership
 
 2. Controls & Compliance Checklist
 
-[Folder](./02-botium-toys-internal-audit/botium-controls-checklist.md)
+
 Covers:
 
 Administrative, technical, and physical controls
@@ -115,6 +115,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
