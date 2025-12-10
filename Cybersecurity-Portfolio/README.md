@@ -89,7 +89,7 @@ Security recommendations
 Folder: /Professional-Statement
 A short summary that highlights my strengths, values, and interest in cybersecurity.
 
-🔗 View Statement
+[🔗 View Statement](./01-professional-profile/professional-statement.md)
 
 
 📜 Certifications
@@ -99,7 +99,7 @@ Google Cybersecurity Certificate (In Progress)
 CompTia Network+
 
 CompTia Security+
-w
+
 
 📬 Contact
 
@@ -113,6 +113,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
