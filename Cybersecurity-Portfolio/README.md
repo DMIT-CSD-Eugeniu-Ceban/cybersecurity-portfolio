@@ -83,7 +83,7 @@ Gaps identified
 
 Security recommendations
 
-🔗 View Project
+[🔗 View Project](./02-botium-toys-internal-audit/botium-controls-checklist.md)
 
 
 3. Professional Statement
@@ -115,6 +115,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
