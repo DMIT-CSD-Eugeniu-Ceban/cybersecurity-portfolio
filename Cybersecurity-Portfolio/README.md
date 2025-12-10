@@ -3,6 +3,7 @@
 Eugene Ceban — Cybersecurity Analyst (in progress)
 Based in Edmonton, Alberta, Canada
 
+
 🔐 About Me
 
 I am an aspiring cybersecurity analyst currently completing the Google Cybersecurity Certificate.
@@ -21,6 +22,7 @@ SIEM log analysis
 Network and endpoint security
 
 This portfolio showcases real cybersecurity projects and hands-on work completed throughout my training.
+
 
 🧰 Skills & Tools
 
@@ -105,5 +107,6 @@ GitHub: https://github.com/DMIT-CSD-Eugeniu-Ceban
 Email: eugeniu.ceban.cntdo@gmail.com
 
 📌 Purpose of This Portfolio
+
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
