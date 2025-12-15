@@ -96,8 +96,6 @@ A short summary that highlights my strengths, values, and interest in cybersecur
   📂 [View project](./04-nist-incident-response)
 
 
-
-
 📜 Certifications
 
 Google Cybersecurity Certificate (In Progress)
@@ -119,6 +117,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
