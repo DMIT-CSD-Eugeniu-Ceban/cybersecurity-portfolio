@@ -91,6 +91,12 @@ A short summary that highlights my strengths, values, and interest in cybersecur
 
 [🔗 View Statement](./01-professional-profile/professional-statement.md)
 
+- **NIST Incident Response Case Study**  
+  Applied the NIST Cybersecurity Framework to analyze, contain, eradicate, and recover from a simulated security incident. Documented incident response actions and lessons learned.  
+  📂 [View project](./04-nist-incident-response)
+
+
+
 
 📜 Certifications
 
@@ -113,6 +119,7 @@ Email: eugeniu.ceban.cntdo@gmail.com
 
 
 This repository serves as a professional showcase of my cybersecurity training, hands-on exercises, documentation, and technical abilities. It is continually updated as I progress in my cybersecurity career.
+
 
 
 
