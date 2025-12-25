@@ -1,35 +1,28 @@
-
-# Asset Inventory — Home Office Network
+# Risk Register — Bank Funds (Likelihood × Impact)
 
 ## Objective
-Create a basic asset inventory for a home office network and classify assets by sensitivity based on the business impact of compromise.
+Score key risks to a commercial bank’s funds using a simple qualitative risk model and prioritize remediation focus.
 
-## Scenario
-A small business is operated from a home office with multiple network-connected devices. An inventory helps identify which assets store sensitive data or provide access to other assets and therefore require stronger security controls.
+## Operational environment (summary)
+The bank operates with on-prem and remote employees, handles sensitive customer accounts, and is subject to strict financial regulations. Disruptions or leaks can trigger regulatory penalties, customer losses, and operational downtime.
 
-## Inventory
-Sensitivity levels used:
-- **Public**: minimal impact if exposed
-- **Internal**: useful but limited impact
-- **Confidential**: exposure could cause meaningful harm
-- **Restricted**: exposure/alteration would cause severe harm (financial, legal, or operational)
+## Risk scoring method
+- Likelihood: **1 (low)**, **2 (moderate)**, **3 (high)**
+- Impact/Severity: **1 (low)**, **2 (moderate)**, **3 (high)**
+- Priority score: **Likelihood × Severity** → **1–9**
 
-| Asset | Network access | Owner | Location | Notes | Sensitivity |
-|---|---|---|---|---|---|
-| Desktop computer | Always connected (wired/wifi) | Business owner | Home office (near router) | Stores business documents, credentials, browser sessions; primary workstation | Restricted |
-| Router / Wi-Fi gateway | Always connected | Business owner | Central area (near ISP connection) | Controls network access; compromise affects all devices; admin access critical | Restricted |
-| External hard drive | Sometimes connected (USB/local) | Business owner | Home office | Contains backups of business data; potential PII and sensitive records | Restricted |
-| Smartphone (owner) | Frequently connected (Wi-Fi/mobile) | Business owner | Mobile | Email, MFA prompts, access to accounts; high risk if lost/stolen | Confidential |
-| Printer | Sometimes connected (Wi-Fi) | Business owner | Home office | May store print jobs; can leak sensitive documents if misconfigured | Internal |
-| Webcam | Sometimes connected (USB/Wi-Fi) | Business owner | Home office | Privacy risk; may enable surveillance if compromised | Internal |
+## Notes (40–60 words)
+The bank’s funds and customer data are attractive targets due to direct financial gain. With many users handling sensitive data, both social engineering and credential compromise are realistic threats. Remote access increases exposure to phishing and account takeover. Regulatory requirements amplify impact: breaches can lead to penalties, forced disclosures, and reputational damage.
 
-## Classification rationale (examples)
-- **Restricted**: assets that store critical business data or control access for the environment (desktop, router, backups).
-- **Confidential**: assets that can enable account takeover or expose private business communications (smartphone).
-- **Internal**: assets with limited data sensitivity but still represent attack surface (printer, webcam).
+## Risk register
 
-## Recommended baseline controls
-- Router: change default admin credentials, disable WPS, enable WPA2/WPA3, keep firmware updated
-- Desktop: full disk encryption, strong passwords, automatic updates, limited admin usage
-- Backups: encrypt external drive, keep offline when not backing up
-- Smartphone: screen lock, remote wipe enabled, MFA protected accounts
+| Risk | Description | Likelihood (1–3) | Severity (1–3) | Priority (1–9) | Rationale (why) | Recommended controls (examples) |
+|---|---|---:|---:|---:|---|---|
+| Business email compromise (BEC) | Attacker impersonates exec/vendor to redirect payments | 3 | 3 | 9 | Common, targets finance workflows directly | MFA, payment verification procedures, email security (DMARC/SPF/DKIM), user training |
+| Compromised user database | Credential theft leading to account takeover/fraud | 2 | 3 | 6 | Depends on controls; impact is severe | Strong hashing, access controls, monitoring, segmentation, incident response playbooks |
+| Financial records leak | Exposure of sensitive financial/customer data | 2 | 3 | 6 | Likely via misconfig or phishing; regulated data | DLP, least privilege, encryption, logging/auditing, vendor controls |
+| Theft (physical or insider) | Loss of funds or sensitive assets | 1 | 2 | 2 | Low crime area, but insider risk exists | Physical security, separation of duties, monitoring, approvals |
+| Supply chain attack | Vendor compromise impacts banking operations | 1 | 3 | 3 | Less frequent but high impact | Vendor risk management, SBOM, patching, segmentation, contingency planning |
+
+## Prioritization outcome
+Highest immediate priority is **BEC (9)** due to high likelihood and direct financial impact. Next focus is reducing exposure to **credential compromise and data leaks (6)** through stronger access control, monitoring, and security awareness.
