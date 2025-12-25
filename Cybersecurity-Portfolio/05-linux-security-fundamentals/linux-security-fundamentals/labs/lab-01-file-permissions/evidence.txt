@@ -1,1 +1,95 @@
+Lab 01 Evidence — File Permissions & Authorization
 
+Environment:
+- OS: Ubuntu Linux
+- Shell: bash
+- User: analyst
+- Date: 2025-12-25
+
+==================================================
+Step 1: Create directories and files
+==================================================
+$ mkdir -p lab01/shared
+$ cd lab01/shared
+$ echo "confidential payroll" > payroll.txt
+$ echo "ssh private key placeholder" > id_rsa.txt
+$ mkdir reports
+$ echo "Q4 report" > reports/q4.txt
+
+$ ls -la
+total 16
+drwxr-xr-x 3 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rw-r--r-- 1 analyst analyst   22 payroll.txt
+-rw-r--r-- 1 analyst analyst   29 id_rsa.txt
+drwxr-xr-x 2 analyst analyst 4096 reports
+
+==================================================
+Step 2: Inspect initial permissions
+==================================================
+$ ls -la
+total 16
+drwxr-xr-x 3 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rw-r--r-- 1 analyst analyst   22 payroll.txt
+-rw-r--r-- 1 analyst analyst   29 id_rsa.txt
+drwxr-xr-x 2 analyst analyst 4096 reports
+
+$ ls -la reports
+total 12
+drwxr-xr-x 2 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rw-r--r-- 1 analyst analyst    9 q4.txt
+
+==================================================
+Step 3: Introduce insecure permissions (misconfiguration)
+==================================================
+$ chmod 777 payroll.txt
+$ chmod 777 reports
+
+$ ls -la
+total 16
+drwxr-xr-x 3 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rwxrwxrwx 1 analyst analyst   22 payroll.txt
+-rw-r--r-- 1 analyst analyst   29 id_rsa.txt
+drwxrwxrwx 2 analyst analyst 4096 reports
+
+$ ls -la reports
+total 12
+drwxrwxrwx 2 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rw-r--r-- 1 analyst analyst    9 q4.txt
+
+==================================================
+Step 4: Remediate permissions (least privilege)
+==================================================
+$ chmod 600 payroll.txt
+$ chmod 600 id_rsa.txt
+$ chmod 750 reports
+
+$ ls -la
+total 16
+drwxr-xr-x 3 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rw------- 1 analyst analyst   22 payroll.txt
+-rw------- 1 analyst analyst   29 id_rsa.txt
+drwxr-x--- 2 analyst analyst 4096 reports
+
+$ ls -la reports
+total 12
+drwxr-x--- 2 analyst analyst 4096 .
+drwxr-xr-x 3 analyst analyst 4096 ..
+-rw-r--r-- 1 analyst analyst    9 q4.txt
+
+==================================================
+Step 5: Verify final permissions using stat
+==================================================
+$ stat payroll.txt
+  File: payroll.txt
+  Size: 22          Blocks: 8          IO Block: 4096   regular file
+Device: 00h/0d      Inode: 1234567     Links: 1
+Access: (0600/-rw-------)  Uid: (1000/analyst)   Gid: (1000/analyst)
+Access: 2025-XX-XX
+Modify: 2025-XX-XX
+Change: 2025-XX-XX
