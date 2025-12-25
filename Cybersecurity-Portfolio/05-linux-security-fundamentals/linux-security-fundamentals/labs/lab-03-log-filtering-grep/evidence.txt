@@ -1,1 +1,56 @@
 
+Lab 03 Evidence — Log Analysis & Filtering
+
+Environment:
+- OS: Ubuntu Linux
+- Shell: bash
+- User: analyst
+- Date: 2025-12-25
+
+==================================================
+Step 1: Create a sample log file
+==================================================
+$ mkdir lab03
+$ cd lab03
+$ nano auth.log
+
+Sample log content:
+Jan 10 10:01:15 server sshd[1024]: Failed password for invalid user admin from 192.168.1.10
+Jan 10 10:01:20 server sshd[1025]: Failed password for invalid user admin from 192.168.1.10
+Jan 10 10:02:10 server sshd[1050]: Accepted password for user analyst from 192.168.1.20
+Jan 10 10:03:45 server sudo: analyst : TTY=pts/0 ; COMMAND=/bin/ls
+Jan 10 10:04:50 server sshd[1100]: Failed password for user test from 203.0.113.55
+Jan 10 10:05:30 server systemd[1]: Starting Cleanup of Temporary Directories...
+Jan 10 10:06:40 server sshd[1150]: Failed password for user root from 203.0.113.55
+Jan 10 10:07:55 server systemd[1]: Started Cleanup of Temporary Directories.
+
+==================================================
+Step 2: Search for error and failure messages
+==================================================
+$ grep "Failed" auth.log
+Jan 10 10:01:15 server sshd[1024]: Failed password for invalid user admin from 192.168.1.10
+Jan 10 10:01:20 server sshd[1025]: Failed password for invalid user admin from 192.168.1.10
+Jan 10 10:04:50 server sshd[1100]: Failed password for user test from 203.0.113.55
+Jan 10 10:06:40 server sshd[1150]: Failed password for user root from 203.0.113.55
+
+==================================================
+Step 3: Filter failed SSH login attempts
+==================================================
+$ grep "sshd" auth.log | grep "Failed"
+Jan 10 10:01:15 server sshd[1024]: Failed password for invalid user admin from 192.168.1.10
+Jan 10 10:01:20 server sshd[1025]: Failed password for invalid user admin from 192.168.1.10
+Jan 10 10:04:50 server sshd[1100]: Failed password for user test from 203.0.113.55
+Jan 10 10:06:40 server sshd[1150]: Failed password for user root from 203.0.113.55
+
+==================================================
+Step 4: Count failed login attempts
+==================================================
+$ grep "Failed password" auth.log | wc -l
+4
+
+==================================================
+Step 5: Identify repeated attempts from the same IP
+==================================================
+$ grep "Failed password" auth.log | grep "203.0.113.55"
+Jan 10 10:04:50 server sshd[1100]: Failed password for user test from 203.0.113.55
+Jan 10 10:06:40 server sshd[1150]: Failed password for user root from 203.0.113.55
