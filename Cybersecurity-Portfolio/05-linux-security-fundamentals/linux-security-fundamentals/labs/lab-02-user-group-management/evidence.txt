@@ -1,1 +1,45 @@
+Lab 02 Evidence — User & Group Management
+
+Environment:
+- OS: Ubuntu Linux
+- Shell: bash
+- User performing actions: analyst
+- Date: 2025-XX-XX
+
+==================================================
+Step 1: Create a new group
+==================================================
+$ sudo groupadd audit_team
+$ getent group audit_team
+audit_team:x:1002:
+
+==================================================
+Step 2: Create a new user
+==================================================
+$ sudo useradd -m analyst_temp
+$ id analyst_temp
+uid=1001(analyst_temp) gid=1001(analyst_temp) groups=1001(analyst_temp)
+
+==================================================
+Step 3: Add user to the group
+==================================================
+$ sudo usermod -aG audit_team analyst_temp
+$ id analyst_temp
+uid=1001(analyst_temp) gid=1001(analyst_temp) groups=1001(analyst_temp),1002(audit_team)
+
+==================================================
+Step 4: Assign directory ownership and permissions
+==================================================
+$ mkdir audit_reports
+$ sudo chown :audit_team audit_reports
+$ chmod 770 audit_reports
+$ ls -ld audit_reports
+drwxrwx--- 2 analyst audit_team 4096 audit_reports
+
+==================================================
+Step 5: Remove the user
+==================================================
+$ sudo userdel -r analyst_temp
+$ id analyst_temp
+id: analyst_temp: no such user
 
