@@ -17,5 +17,21 @@ Explore how Suricata rules generate alerts and how Suricata outputs detection da
 
 ## Evidence (paste small excerpts)
 ### 1) Rule snippet (1–3 lines)
+
+---
+
+### `wazuh-siem-query.md`
+```md
+# Wazuh SIEM Query Investigation
+
+## Overview
+Wazuh is a SIEM platform used to search, analyze, and correlate security events from logs.
+
+## Investigation summary
+- Investigated possible security issues on a mail server.
+- Focused on failed SSH login attempts involving the `root` account.
+
+## Query used
 ```text
-<paste the rule line(s) you reviewed here>
+host.keyword: mailsv AND (fail* OR failed) AND root
+
