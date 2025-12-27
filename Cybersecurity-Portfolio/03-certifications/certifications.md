@@ -1,5 +1,6 @@
 # Certifications
 
-- Google Cybersecurity Professional Certificate – *in progress* (Coursera)
+- Google Cybersecurity Professional Certificate 
 - CompTia Network+
 - CompTia Security+
+
